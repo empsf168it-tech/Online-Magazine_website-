@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARTICLES &amp; STORIES — ONLINE MAGAZINE | Curated Editorial Archive</title>
+  <meta name="description" content="Explore our curated collection of in-depth articles across Technology, Business, Lifestyle, Travel, Culture, and Entertainment.">
+  <meta property="og:title" content="ARTICLES &amp; STORIES — ONLINE MAGAZINE">
+  <meta property="og:description" content="In-depth journalism, critical essays, and thought-provoking analysis from leading writers and researchers.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1600&auto=format&fit=crop">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111827'/><path d='M25 25 H75 V75 H25 Z' fill='none' stroke='%23D97706' stroke-width='8'/><line x1='35' y1='40' x2='65' y2='40' stroke='%23FFFFFF' stroke-width='6'/><line x1='35' y1='52' x2='65' y2='52' stroke='%23FFFFFF' stroke-width='6'/><line x1='35' y1='64' x2='55' y2='64' stroke='%23D97706' stroke-width='6'/></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- GLOBAL HEADER -->
+  <header class="site-header" id="main-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="Online Magazine Home Page">
+        <div class="brand-emblem">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" fill="#0F172A"/>
+            <rect x="10" y="10" width="24" height="24" stroke="#D97706" stroke-width="2.5" fill="none"/>
+            <line x1="15" y1="18" x2="29" y2="18" stroke="#FFFFFF" stroke-width="2"/>
+            <line x1="15" y1="23" x2="29" y2="23" stroke="#FFFFFF" stroke-width="2"/>
+            <line x1="15" y1="28" x2="23" y2="28" stroke="#D97706" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="brand-title">
+          ONLINE MAGAZINE
+          <span>PERSPECTIVES &amp; CULTURE</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="brewery.html" class="nav-link">ABOUT</a>
+        <a href="beers.html" class="nav-link active">ARTICLES</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="contact.html" class="btn-primary">
+          SUBSCRIBE
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <button class="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE OVERLAY NAVIGATION -->
+  <div class="mobile-overlay" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-overlay-header">
+      <div class="brand-title">
+        ONLINE MAGAZINE
+        <span>JOURNALISM &amp; ESSAYS</span>
+      </div>
+      <button class="mobile-close-btn" aria-label="Close Mobile Menu">&times;</button>
+    </div>
+
+    <div class="mobile-menu-links">
+      <a href="index.html" class="mobile-menu-link">HOME</a>
+      <a href="brewery.html" class="mobile-menu-link">ABOUT</a>
+      <a href="beers.html" class="mobile-menu-link active">ARTICLES</a>
+      <a href="contact.html" class="mobile-menu-link">CONTACT</a>
+      <a href="contact.html" class="btn-primary mobile-visit-btn">
+        SUBSCRIBE
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="mobile-overlay-footer">
+      <div>EDITORIAL DESK · GLOBAL DIGITAL NETWORK</div>
+      <div>INDEPENDENT JOURNALISTIC EXCELLENCE</div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ARTICLES PAGE HERO (Animated Split Grid with Hero Image)
+       ========================================================================== -->
+  <section class="subpage-hero-grid">
+    <div class="subpage-hero-left reveal-fade-up">
+      <!-- Organic shape background element -->
+      <div class="hero-organic-shape"></div>
+
+      <!-- Floating accent particle -->
+      <div class="hop-particle" style="top: 15%; right: 8%;">
+        <svg viewBox="0 0 32 32" fill="#D97706"><path d="M16 2 L20 12 L30 16 L20 20 L16 30 L12 20 L2 16 L12 12 Z"/></svg>
+      </div>
+
+      <div class="tag-label" style="margin-bottom: 1.5rem;">EDITORIAL DOSSIER &amp; ARCHIVE</div>
+
+      <h1 class="text-display-hero" style="margin-bottom: 1.8rem;">
+        MAGAZINE<br>
+        <span class="text-italic-accent">ARTICLES.</span>
+      </h1>
+
+      <p class="text-subhead" style="max-width: 500px; margin-bottom: 2.2rem;">
+        Deep-dive reportage, analytical essays, critical reviews, and cultural dispatches written by domain specialists and independent journalists.
+      </p>
+
+      <!-- Category Filter Bar inside Hero -->
+      <div class="filter-bar" style="margin: 0;">
+        <button class="filter-btn active" data-filter="all">ALL STORIES</button>
+        <button class="filter-btn" data-filter="technology">TECHNOLOGY</button>
+        <button class="filter-btn" data-filter="business">BUSINESS</button>
+        <button class="filter-btn" data-filter="lifestyle">LIFESTYLE</button>
+        <button class="filter-btn" data-filter="travel">TRAVEL</button>
+        <button class="filter-btn" data-filter="culture">CULTURE</button>
+      </div>
+    </div>
+
+    <div class="subpage-hero-right">
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1600&auto=format&fit=crop" alt="Open editorial journal and contemporary reading table">
+        <div style="position: absolute; bottom: 2rem; left: 2rem; background: var(--color-charcoal); color: #FFFFFF; padding: 0.8rem 1.4rem; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; z-index: 3;">
+          CURATED ESSAYS · ISSUE Nº 48
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ARTICLES CATALOG GRID
+       ========================================================================== -->
+  <section style="padding: var(--section-padding) clamp(1.5rem, 4vw, 3.5rem); border-bottom: 1px solid var(--border-dark);">
+    <div class="beers-catalog-grid reveal-stagger">
+      
+      <!-- Article 1 -->
+      <article class="beer-card beer-catalog-item" data-category="technology">
+        <div class="beer-card-img-wrap">
+          <span class="beer-badge">TECHNOLOGY</span>
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop" alt="Human-centered AI and digital computing">
+        </div>
+        <div class="beer-card-body">
+          <div class="beer-meta-row">
+            <span class="beer-style">ARTIFICIAL INTELLIGENCE</span>
+            <span class="beer-specs">8 MIN READ · DR. MAYA LIN</span>
+          </div>
+          <h3 class="beer-card-title">THE FUTURE OF AI IS BECOMING HUMAN-CENTERED</h3>
+          <p class="beer-card-desc">How modern machine learning systems are shifting from brute computational power to empathetic, context-aware collaboration.</p>
+          <div class="tasting-notes-tag">
+            <span>THEMES:</span> Cognitive Systems / Ethics / Interface Design
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="beer-card beer-catalog-item" data-category="business">
+        <div class="beer-card-img-wrap">
+          <span class="beer-badge">BUSINESS</span>
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Modern business architecture and corporate hub">
+        </div>
+        <div class="beer-card-body">
+          <div class="beer-meta-row">
+            <span class="beer-style">ENTERPRISE &amp; INNOVATION</span>
+            <span class="beer-specs">6 MIN READ · ALEXANDER WRIGHT</span>
+          </div>
+          <h3 class="beer-card-title">HOW MODERN BUSINESSES ARE ADAPTING TO CHANGE</h3>
+          <p class="beer-card-desc">From agile decentralized operations to climate-conscious supply chains, leading enterprises are redesigning corporate resilience.</p>
+          <div class="tasting-notes-tag">
+            <span>THEMES:</span> Resilience / Agility / Corporate Strategy
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="beer-card beer-catalog-item" data-category="lifestyle">
+        <div class="beer-card-img-wrap">
+          <span class="beer-badge">LIFESTYLE</span>
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop" alt="Mindful minimalist interior and living space">
+        </div>
+        <div class="beer-card-body">
+          <div class="beer-meta-row">
+            <span class="beer-style">MINDFUL LIVING</span>
+            <span class="beer-specs">5 MIN READ · JULIAN VANCE</span>
+          </div>
+          <h3 class="beer-card-title">SMALL CHANGES THAT CAN TRANSFORM EVERYDAY LIFE</h3>
+          <p class="beer-card-desc">Leading neuroscientists and environmental psychologists explore the transformative power of micro-rituals, circadian lighting, and spatial order.</p>
+          <div class="tasting-notes-tag">
+            <span>THEMES:</span> Habit Formation / Spatial Design / Rest
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="beer-card beer-catalog-item" data-category="travel">
+        <div class="beer-card-img-wrap">
+          <span class="beer-badge">TRAVEL</span>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Serene mountain landscape and secluded retreat">
+        </div>
+        <div class="beer-card-body">
+          <div class="beer-meta-row">
+            <span class="beer-style">GLOBAL EXPEDITIONS</span>
+            <span class="beer-specs">9 MIN READ · CLARA DUPONT</span>
+          </div>
+          <h3 class="beer-card-title">HIDDEN DESTINATIONS WORTH EXPLORING THIS YEAR</h3>
+          <p class="beer-card-desc">An immersive journey through remote alpine sanctuaries, architectural eco-lodges, and untouched coastal landscapes across four continents.</p>
+          <div class="tasting-notes-tag">
+            <span>THEMES:</span> Slow Travel / Eco Architecture / Solitude
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="beer-card beer-catalog-item" data-category="culture">
+        <div class="beer-card-img-wrap">
+          <span class="beer-badge">CULTURE</span>
+          <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200&auto=format&fit=crop" alt="Contemporary art gallery with modern creative installation">
+        </div>
+        <div class="beer-card-body">
+          <div class="beer-meta-row">
+            <span class="beer-style">CONTEMPORARY ARTS</span>
+            <span class="beer-specs">7 MIN READ · MARCUS THIERRY</span>
+          </div>
+          <h3 class="beer-card-title">THE NEW ERA OF DIGITAL CREATIVITY &amp; AESTHETICS</h3>
+          <p class="beer-card-desc">How digital sculptors, generative artists, and sound designers are challenging conventional gallery spaces and redefining cultural ownership.</p>
+          <div class="tasting-notes-tag">
+            <span>THEMES:</span> Digital Aesthetics / Galleries / Expression
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="beer-card beer-catalog-item" data-category="culture">
+        <div class="beer-card-img-wrap">
+          <span class="beer-badge">ENTERTAINMENT</span>
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" alt="Creative studio lighting and independent cinematic production">
+        </div>
+        <div class="beer-card-body">
+          <div class="beer-meta-row">
+            <span class="beer-style">CINEMA &amp; MEDIA</span>
+            <span class="beer-specs">6 MIN READ · SOPHIA CHEN</span>
+          </div>
+          <h3 class="beer-card-title">THE RISE OF INDEPENDENT DIGITAL CREATORS &amp; STUDIOS</h3>
+          <p class="beer-card-desc">A backstage look into boutique production studios and indie storytellers producing cinema-grade narrative experiences without traditional backing.</p>
+          <div class="tasting-notes-tag">
+            <span>THEMES:</span> Indie Cinema / Production / Creator Tools
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE EDITORIAL STANDARDS METRIC SECTION
+       ========================================================================== -->
+  <section class="tasting-scale-section">
+    <div class="container-full">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;" class="reveal-fade-up">
+        <div class="tag-label" style="margin-bottom: 1rem;">EDITORIAL RIGOR</div>
+        <h2 class="text-display-large">
+          JOURNALISTIC STANDARDS &amp;<br>
+          <span class="text-italic-accent">QUALITY BENCHMARKS</span>
+        </h2>
+        <p class="text-subhead" style="margin-top: 1rem;">
+          How our editorial board balances the four essential pillars of investigative reportage and critical commentary.
+        </p>
+      </div>
+
+      <div class="tasting-scales-grid reveal-fade-up">
+        <!-- RIGOR -->
+        <div class="tasting-scale-item">
+          <div class="tasting-scale-label">
+            <span>INVESTIGATIVE RIGOR &amp; SOURCING</span>
+            <span style="color: var(--color-amber);">5 / 5</span>
+          </div>
+          <div class="scale-dots" data-rating="5">
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+          </div>
+        </div>
+
+        <!-- CLARITY -->
+        <div class="tasting-scale-item">
+          <div class="tasting-scale-label">
+            <span>NARRATIVE DEPTH &amp; CLARITY</span>
+            <span style="color: var(--color-amber);">5 / 5</span>
+          </div>
+          <div class="scale-dots" data-rating="5">
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+          </div>
+        </div>
+
+        <!-- RELEVANCE -->
+        <div class="tasting-scale-item">
+          <div class="tasting-scale-label">
+            <span>GLOBAL RELEVANCE &amp; FORESIGHT</span>
+            <span style="color: var(--color-amber);">4 / 5</span>
+          </div>
+          <div class="scale-dots" data-rating="4">
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+          </div>
+        </div>
+
+        <!-- ORIGINALITY -->
+        <div class="tasting-scale-item">
+          <div class="tasting-scale-label">
+            <span>ORIGINAL REPORTAGE &amp; FIELD DATA</span>
+            <span style="color: var(--color-amber);">5 / 5</span>
+          </div>
+          <div class="scale-dots" data-rating="5">
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+            <div class="scale-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="global-footer">
+    <div class="footer-top-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand-emblem">
+            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="44" height="44" stroke="#FFFFFF" stroke-width="2" fill="#0F172A"/>
+              <rect x="10" y="10" width="24" height="24" stroke="#D97706" stroke-width="2.5" fill="none"/>
+              <line x1="15" y1="18" x2="29" y2="18" stroke="#FFFFFF" stroke-width="2"/>
+              <line x1="15" y1="23" x2="29" y2="23" stroke="#FFFFFF" stroke-width="2"/>
+              <line x1="15" y1="28" x2="23" y2="28" stroke="#D97706" stroke-width="2"/>
+            </svg>
+          </div>
+          <h2 class="footer-brand-title">ONLINE MAGAZINE</h2>
+        </div>
+        <div class="footer-tagline">PERSPECTIVES &amp; CULTURE.</div>
+        <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.7); max-width: 320px; font-size: 0.95rem;">
+          An independent digital publication delivering thoughtful journalism, cultural critique, and deep-dive analysis across modern life.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">NAVIGATION</div>
+        <div class="footer-links-list">
+          <a href="index.html" class="footer-link">HOME</a>
+          <a href="brewery.html" class="footer-link">ABOUT</a>
+          <a href="beers.html" class="footer-link active">ARTICLES</a>
+          <a href="contact.html" class="footer-link">CONTACT</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">SECTIONS</div>
+        <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.8;">
+          TECHNOLOGY &amp; AI<br>
+          BUSINESS &amp; STRATEGY<br>
+          LIFESTYLE &amp; WELLNESS<br>
+          TRAVEL &amp; CULTURE
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">CONNECT</div>
+        <div class="footer-links-list">
+          <a href="contact.html" class="footer-link">NEWSLETTER</a>
+          <a href="#" class="footer-link" onclick="return false;">TWITTER / X</a>
+          <a href="#" class="footer-link" onclick="return false;">LINKEDIN</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 ONLINE MAGAZINE. ALL RIGHTS RESERVED.</div>
+      <div>INDEPENDENT JOURNALISM &amp; EDITORIAL EXCELLENCE.</div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top of page">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

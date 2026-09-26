@@ -1,0 +1,1782 @@
+/* ==========================================================================
+   ONLINE MAGAZINE — MODERN LUXURY EDITORIAL DESIGN SYSTEM
+   Brand Colors:
+   - Primary (Slate Black): #0F172A
+   - Secondary (Slate Gray): #334155
+   - Accent (Warm Ochre): #D97706
+   - Accent Hover: #B45309
+   - Highlight (Warm Amber): #F59E0B
+   - Background (Crisp White): #FFFFFF
+   - Soft Background (Slate White): #F8FAFC
+   - Main Text: #0F172A
+   - Muted Text: #64748B
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. GOOGLE FONTS & RESET
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  /* Color Tokens */
+  --bg-cream: #FFFFFF;
+  --bg-cream-dark: #F8FAFC;
+  --color-charcoal: #0F172A;
+  --color-charcoal-light: #334155;
+  --color-amber: #D97706;
+  --color-amber-hover: #B45309;
+  --color-brown: #334155;
+  --color-hop-green: #F59E0B;
+  --color-white: #FFFFFF;
+  --color-muted: #64748B;
+  --border-dark: #0F172A;
+  --border-light: rgba(15, 23, 42, 0.12);
+
+  /* Typography Tokens */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Playfair Display', Georgia, serif;
+  --font-ui: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing Tokens */
+  --header-height: 84px;
+  --section-padding: clamp(60px, 8vw, 120px);
+  --container-max: 1440px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: clip;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--color-amber);
+  color: #FFFFFF;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --------------------------------------------------------------------------
+   1. TYPOGRAPHY & HYPER-EDITORIAL STYLES
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-charcoal);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.text-display-hero {
+  font-size: clamp(2.5rem, 5.5vw, 5.25rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.text-display-large {
+  font-size: clamp(2rem, 3.8vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.text-display-medium {
+  font-size: clamp(1.75rem, 2.8vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.text-display-small {
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.text-italic-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--color-amber);
+}
+
+.text-subhead {
+  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.tag-label {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tag-label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-amber);
+  border-radius: 50%;
+}
+
+.editorial-number {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 6vw, 7.5rem);
+  line-height: 0.8;
+  color: var(--color-charcoal);
+  opacity: 0.15;
+  transition: opacity var(--transition-smooth);
+}
+
+/* --------------------------------------------------------------------------
+   2. BUTTONS & UI COMPONENTS
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.1rem 2.2rem;
+  background-color: var(--color-charcoal);
+  color: #FFFFFF;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border: 2px solid var(--color-charcoal);
+  border-radius: 0px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color var(--transition-smooth), transform var(--transition-fast);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-amber);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-smooth);
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-primary svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(5px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.1rem 2.2rem;
+  background-color: transparent;
+  color: var(--color-charcoal);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border: 2px solid var(--color-charcoal);
+  border-radius: 0px;
+  position: relative;
+  z-index: 1;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-charcoal);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-secondary svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-secondary:hover svg {
+  transform: translateX(5px);
+}
+
+.btn-amber {
+  background-color: var(--color-amber);
+  color: #FFFFFF;
+  border-color: var(--color-amber);
+}
+
+.btn-amber::before {
+  background-color: var(--color-charcoal);
+}
+
+.btn-amber:hover {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   3. GLOBAL HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--bg-cream);
+  border-bottom: 1px solid var(--border-dark);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast), backdrop-filter var(--transition-fast), border-color var(--transition-fast);
+  will-change: transform, box-shadow;
+}
+
+.site-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(17, 24, 39, 0.08);
+}
+
+.header-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Custom SVG Emblem + Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.brand-emblem {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-emblem svg {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-title span {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  color: var(--color-amber);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* Desktop Nav */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 2.5vw, 2.8rem);
+  flex-shrink: 0;
+}
+
+.nav-link {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-charcoal);
+  position: relative;
+  padding: 0.5rem 0;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-amber);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-fast);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link.active {
+  color: var(--color-amber);
+}
+
+/* Header Right Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+}
+
+.hamburger-btn {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border-dark);
+  background: var(--bg-cream);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.hamburger-btn:hover {
+  background-color: var(--color-charcoal);
+}
+
+.hamburger-btn:hover .bar {
+  background-color: var(--bg-cream);
+}
+
+.hamburger-btn .bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-charcoal);
+  transition: transform var(--transition-fast), opacity var(--transition-fast), background-color var(--transition-fast);
+}
+
+/* Hamburger active state */
+.hamburger-btn.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Nav Overlay */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-charcoal);
+  color: var(--bg-cream);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 2rem 3rem 2rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+}
+
+.mobile-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.mobile-overlay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1.25rem;
+}
+
+.mobile-overlay-header .brand-title {
+  color: var(--bg-cream);
+}
+
+.mobile-close-btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--bg-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.mobile-close-btn:hover {
+  background-color: var(--color-amber);
+  color: var(--color-charcoal);
+  border-color: var(--color-amber);
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2.5rem 0 auto 0;
+}
+
+.mobile-menu-link {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bg-cream);
+  line-height: 1.2;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active {
+  color: var(--color-amber);
+  transform: translateX(10px);
+}
+
+.mobile-visit-btn {
+  margin-top: 1rem;
+  align-self: flex-start;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.6rem;
+  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.2);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.mobile-visit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px var(--color-amber);
+}
+
+.mobile-overlay-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT UTILITIES & ASYMMETRIC BORDER SYSTEM
+   -------------------------------------------------------------------------- */
+.container-full {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.border-grid-top {
+  border-top: 1px solid var(--border-dark);
+}
+
+.border-grid-bottom {
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.border-grid-left {
+  border-left: 1px solid var(--border-dark);
+}
+
+.border-grid-right {
+  border-right: 1px solid var(--border-dark);
+}
+
+/* Editorial Split Layout & Subpage Heroes */
+.split-hero-grid,
+.subpage-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(85vh - var(--header-height));
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.split-hero-left,
+.subpage-hero-left {
+  padding: clamp(2.5rem, 5vw, 5.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border-dark);
+  position: relative;
+  background-color: var(--bg-cream);
+}
+
+.split-hero-right,
+.subpage-hero-right {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-cream-dark);
+}
+
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.hero-img-wrap:hover img {
+  transform: scale(1);
+}
+
+/* Organic Amber Circle Badge in Hero */
+.hero-organic-shape {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 260px;
+  height: 260px;
+  background: var(--color-amber);
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  opacity: 0.25;
+  filter: blur(2px);
+  z-index: 1;
+  pointer-events: none;
+  animation: organicRotate 22s infinite linear;
+}
+
+@keyframes organicRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Floating Hop/Grain Particle Element */
+.hop-particle {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 2;
+  animation: floatParticle 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-25px) rotate(15deg); }
+}
+
+/* Ticker Marquee Bar */
+.ticker-wrap {
+  width: 100%;
+  background-color: var(--color-charcoal);
+  color: var(--bg-cream);
+  overflow: hidden;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-dark);
+  white-space: nowrap;
+}
+
+.ticker-move {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tickerMove 28s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0 2rem;
+}
+
+.ticker-item span {
+  color: var(--color-amber);
+  margin-left: 1.5rem;
+}
+
+@keyframes tickerMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   5. BREWERY STORY & PHILOSOPHY SECTIONS
+   -------------------------------------------------------------------------- */
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.story-left {
+  position: relative;
+  min-height: 580px;
+  border-right: 1px solid var(--border-dark);
+  overflow: hidden;
+}
+
+.story-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.story-left:hover img {
+  transform: scale(1.05);
+}
+
+.story-right {
+  padding: clamp(3rem, 6vw, 6.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.vertical-badge-text {
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: rgba(23, 23, 23, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   6. BREWING PROCESS (01 - 04)
+   -------------------------------------------------------------------------- */
+.process-section {
+  padding: var(--section-padding) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.process-header {
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border-dark);
+}
+
+.process-card {
+  padding: 2.8rem 2rem;
+  border-right: 1px solid var(--border-dark);
+  background-color: var(--bg-cream);
+  position: relative;
+  transition: background-color var(--transition-smooth), transform var(--transition-fast);
+}
+
+.process-card:last-child {
+  border-right: none;
+}
+
+.process-card:hover {
+  background-color: var(--color-charcoal);
+  color: var(--bg-cream);
+}
+
+.process-card:hover .editorial-number {
+  color: var(--color-amber);
+  opacity: 0.8;
+}
+
+.process-card:hover h3 {
+  color: var(--bg-cream);
+}
+
+.process-card h3 {
+  margin: 1.5rem 0 0.8rem 0;
+  font-size: 1.5rem;
+}
+
+.process-card p {
+  font-size: 0.95rem;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   7. FEATURED BEERS & BEER CARDS
+   -------------------------------------------------------------------------- */
+.beers-section {
+  padding: var(--section-padding) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.beers-header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.featured-beers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.beer-card {
+  background-color: var(--bg-cream);
+  border: 1px solid var(--border-dark);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.beer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(23, 23, 23, 0.08);
+}
+
+.beer-card-img-wrap {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-dark);
+  background-color: var(--bg-cream-dark);
+}
+
+.beer-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.beer-card:hover .beer-card-img-wrap img {
+  transform: scale(1.08);
+}
+
+.beer-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  background-color: var(--color-charcoal);
+  color: #FFFFFF;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.4rem 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  z-index: 2;
+}
+
+.beer-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.beer-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.beer-style {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.beer-specs {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.beer-card-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+
+.beer-card-desc {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.tasting-notes-tag {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-charcoal-light);
+  border-top: 1px dashed var(--border-light);
+  padding-top: 1rem;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. BREWERY EXPERIENCE & BANNER
+   -------------------------------------------------------------------------- */
+.experience-banner {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--bg-cream);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.experience-banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45);
+  transition: transform 1.2s ease;
+}
+
+.experience-banner:hover .experience-banner-bg {
+  transform: scale(1.05);
+}
+
+.experience-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 3rem 2rem;
+}
+
+.experience-content h2 {
+  color: var(--bg-cream);
+  margin-bottom: 1.5rem;
+}
+
+.experience-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 2.5rem;
+}
+
+.experience-features-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.exp-feature-pill {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.6rem 1.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+/* --------------------------------------------------------------------------
+   9. BREWERY PAGE STYLES (TIMELINE, PHILOSOPHY, INTERACTIVE PROCESS, TEAM)
+   -------------------------------------------------------------------------- */
+.page-hero {
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border-dark);
+  background-color: var(--bg-cream-dark);
+  position: relative;
+}
+
+.timeline-section {
+  padding: var(--section-padding) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.timeline-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 4rem auto 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: var(--border-dark);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  position: relative;
+  margin-bottom: 4rem;
+  width: 50%;
+}
+
+.timeline-item:nth-child(even) {
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50px;
+  margin-left: 50%;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 15px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-amber);
+  border: 4px solid var(--bg-cream);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  right: auto;
+  left: -10px;
+}
+
+.timeline-card {
+  border: 1px solid var(--border-dark);
+  padding: 2rem;
+  background-color: var(--bg-cream);
+}
+
+.timeline-year {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--color-amber);
+  margin-bottom: 0.5rem;
+}
+
+/* Interactive Brewing Process Selector */
+.interactive-brewing-section {
+  padding: var(--section-padding) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border-dark);
+  background-color: var(--color-charcoal);
+  color: var(--bg-cream);
+}
+
+.interactive-brewing-section h2 {
+  color: var(--bg-cream);
+}
+
+.process-tabs {
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 3rem 0;
+  overflow-x: auto;
+}
+
+.process-tab-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.65);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.process-tab-btn:last-child {
+  border-right: none;
+}
+
+.process-tab-btn.active,
+.process-tab-btn:hover {
+  background-color: var(--color-amber);
+  color: #FFFFFF;
+}
+
+.process-display-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3rem;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.process-display-img {
+  height: 380px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.process-display-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Team Grid */
+.team-section {
+  padding: var(--section-padding) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.team-card {
+  border: 1px solid var(--border-dark);
+  background-color: var(--bg-cream);
+}
+
+.team-img-wrap {
+  height: 360px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-dark);
+  filter: grayscale(20%);
+  transition: filter var(--transition-smooth);
+}
+
+.team-card:hover .team-img-wrap {
+  filter: grayscale(0%);
+}
+
+.team-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 1.8rem;
+}
+
+.team-role {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--color-amber);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   10. BEERS PAGE (CATALOG, CATEGORY FILTER, TASTING SCALE)
+   -------------------------------------------------------------------------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 3rem 0;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.6rem;
+  border: 1px solid var(--border-dark);
+  background-color: transparent;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-charcoal);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--color-charcoal);
+  color: #FFFFFF;
+}
+
+.beers-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Interactive Tasting Scale Component */
+.tasting-scale-section {
+  padding: var(--section-padding) clamp(1.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--border-dark);
+  background-color: var(--bg-cream-dark);
+}
+
+.tasting-scales-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+  border: 1px solid var(--border-dark);
+  padding: 3rem;
+  background-color: var(--bg-cream);
+}
+
+.tasting-scale-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.tasting-scale-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.scale-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.scale-dot {
+  flex: 1;
+  height: 12px;
+  border: 1px solid var(--border-dark);
+  background-color: transparent;
+  transition: background-color 0.5s ease;
+}
+
+.scale-dot.filled {
+  background-color: var(--color-amber);
+}
+
+/* --------------------------------------------------------------------------
+   11. CONTACT / VISIT PAGE (HOURS GRID, LOCATION, MINIMAL FORM)
+   -------------------------------------------------------------------------- */
+.contact-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.contact-info-col {
+  padding: clamp(3rem, 6vw, 6rem);
+  border-right: 1px solid var(--border-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-family: var(--font-heading);
+}
+
+.hours-table tr {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hours-table td {
+  padding: 0.85rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.hours-table td:last-child {
+  text-align: right;
+  color: var(--color-amber);
+}
+
+.contact-form-col {
+  padding: clamp(3rem, 6vw, 6rem);
+  background-color: var(--bg-cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  color: var(--color-charcoal);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1.1rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--border-dark);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-charcoal);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--color-amber);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-status {
+  margin-top: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border-dark);
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background-color: var(--color-hop-green);
+  color: #0F172A;
+}
+
+/* Interactive Map Section */
+.map-container {
+  width: 100%;
+  height: 480px;
+  border: 1px solid var(--border-dark);
+  background-color: var(--bg-cream-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-pin-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 10;
+  pointer-events: none;
+  background-color: var(--color-amber);
+  color: #FFFFFF;
+  padding: 0.9rem 1.6rem;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid var(--color-charcoal);
+  box-shadow: 5px 5px 0px var(--color-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. EDITORIAL FOOTER
+   -------------------------------------------------------------------------- */
+.global-footer {
+  background-color: var(--color-charcoal);
+  color: #FFFFFF;
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 4vw, 3.5rem) 3rem clamp(1.5rem, 4vw, 3.5rem);
+  position: relative;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3.5rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-brand .brand-emblem {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.footer-brand-title {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  line-height: 1.1;
+  margin-bottom: 0;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-amber);
+}
+
+.footer-col-title {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1.8rem;
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-link {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-amber);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 2.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   13. ANIMATION REVEAL UTILITIES & RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.55s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.7s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.85s; opacity: 1; transform: translateY(0); }
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .split-hero-grid,
+  .subpage-hero-grid,
+  .story-section,
+  .contact-grid-section {
+    grid-template-columns: 1fr;
+  }
+
+  .split-hero-left,
+  .subpage-hero-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .split-hero-right,
+  .subpage-hero-right {
+    min-height: 400px;
+    width: 100%;
+  }
+
+  .story-left {
+    min-height: 400px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .contact-info-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-card:nth-child(2) {
+    border-right: none;
+  }
+
+  .process-card:nth-child(1),
+  .process-card:nth-child(2) {
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .featured-beers-grid,
+  .beers-catalog-grid,
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .process-display-box {
+    grid-template-columns: 1fr;
+  }
+
+  .tasting-scales-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .process-grid,
+  .featured-beers-grid,
+  .beers-catalog-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 10px;
+    right: auto;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-actions .btn-primary {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 68px;
+  }
+
+  .brand-title {
+    font-size: 1.15rem;
+  }
+
+  .brand-title span {
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+  }
+
+  .brand-emblem {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hamburger-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero-img-wrap {
+    min-height: 380px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .process-tabs {
+    flex-direction: column;
+  }
+
+  .process-tab-btn {
+    border-right: none;
+    border-bottom: 1px solid rgba(244, 239, 230, 0.2);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   14. BACK TO TOP BUTTON
+   -------------------------------------------------------------------------- */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-amber);
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-charcoal);
+  box-shadow: 4px 4px 0px var(--color-charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 990;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.back-to-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--color-charcoal);
+  color: var(--bg-cream);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .back-to-top-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}
